@@ -1,6 +1,4 @@
-def health_payload():
-    """Return the health status of the service."""
-    return {
-        "status": "ok",
-        "version": "dev",
-    }
+from fastapi import FastAPI
+app = FastAPI() @app.get("/health")
+def health():
+    return {"status": "ok"}
